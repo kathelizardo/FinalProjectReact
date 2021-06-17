@@ -1,16 +1,19 @@
-.App {
-  text-align: center;
+.Header{
+  padding-top: 20px;
+  padding-bottom: 60px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Tabla{
+  padding: 16px 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Add{
+  padding: 10px;
+}
+
+.Barra{
+  align-items:flex-end;
+
 }
 
 .App-header {
@@ -21,18 +24,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color:#282c34;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
