@@ -32,17 +32,15 @@ function Contacts() {
       });
   }
 
-  
-
-
   return (
       <>
       <label> <i className="users icon"></i>Contact List</label>
-    <div>
+    <div className="Tabla">
       <table className="ui selectable celled table">
-      <thead>
-        <tr>
-          <th>Full Name</th>
+      <thead className="Thead">
+        <tr className="center aligned">
+          <th>Name</th>
+          <th>Last Name</th>
           <th>Phone</th>
           <th>Email</th>
           <th>Actions</th>
@@ -51,13 +49,13 @@ function Contacts() {
       <tbody>
             {contact.map((item) => {
               return (
-                <tr key={item.id}>
+                <tr key={item.id} className="center aligned">
                   <td>{item.name}</td>
+                  <td>{item.lastname}</td>
                   <td>{item.phone}</td>
                   <td>{item.email}</td>
                   <td>
-                    {/* <button type="submit" onClick={alertDelete} class="ui icon button"><i class="edit icon"></i></button> */}
-                    
+                    <button type="submit" class="ui icon button"> <i class="edit icon"></i></button>
                     <button type="submit" onClick={() => deleteContact(item.id)} class="ui icon button"><i class="trash alternate outline icon"></i></button>
                   </td>
                 </tr>)})}  
