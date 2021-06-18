@@ -6,7 +6,7 @@ function Contacts() {
 
   useEffect(() => {
     getContactInfo()
-  }, [])
+  }, [contact.length])
 
   const getContactInfo = () => {
     axios.get('http://localhost:3000/contatos')

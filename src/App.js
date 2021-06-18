@@ -1,9 +1,9 @@
 import React from "react"
-import './App.css';
 import Header from "./components/Header";
 import AddContact from "./components/AddContact";
 import SearchBar from "./components/SearchBar";
 import Contacts from "./components/Contacts";
+import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,14 +15,13 @@ import {
 export default function App() {
   return (
     <div className="App-header">
-        <div className="ui center aligned container segment" style={{backgroundColor: "whitesmoke"}}>
+        <div  className="ui container segment" style={{backgroundColor: "whitesmoke"}}>
           <div className="Header"><Header/></div>
     <Router>
     
         <div style={{padding: "10px 200px 10px 200px"}}> 
           <div className="ui placeholder segment" style={{backgroundColor: "rgb(224, 230, 230)"}}>
               <div className="ui two column stackable center aligned grid" style={{padding: "20px"}}>
-                  {/* <div className="ui vertical divider">Or</div> */}
                   <div className="middle aligned row">
 
                       <div className="column">
@@ -72,13 +71,16 @@ export default function App() {
             <Home />
           </Route>
           <Route path="/addcontact">
-            <Add />
+            <div className="ui container segment" style={{backgroundColor: "teal", padding:"20px"}} > 
+            <AddContact/>
+            </div>
+            
           </Route>
           <Route path="/findcontact">
-            <Find />
+           <SearchBar/>
           </Route>
-          <Route path="/contact">
-            <List />
+          <Route path="/contact" className="ui center aligned container segment">
+            <Contacts/>
           </Route>
         </Switch>
       
@@ -88,36 +90,10 @@ export default function App() {
   );
 }
 
-//"Pages"
-
 function Home() {
   return (
     <div>
-      <i class="angle double down icon"></i>
-    </div>
-  );
-}
 
-function Add() {
-  return (
-    <div className="Add">
-          <div  className="ui segment" style={{backgroundColor: "teal"}}><AddContact/></div>
-    </div>
-  );
-}
-
-function Find() {
-  return (
-    <div >
-      <SearchBar/>
-    </div>
-  );
-}
-
-function List() {
-  return (
-    <div className="ui center aligned container segment">
-      <Contacts/>
     </div>
   );
 }

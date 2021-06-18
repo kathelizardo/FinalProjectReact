@@ -29,9 +29,9 @@ function AddContact() {
 }
     return(
         <>
-        <div>
+        <div style={{padding:"20px"}}>
          <label style={{color:"whitesmoke", fontSize:"16px"}}> <i class="user plus icon"></i> Add Contact</label>
-        <form class="ui form segment" onSubmit={() => create()}>
+        <form className="ui form segment" onSubmit={() => create()}>
                 <div class="field">
                     <label>Name</label>
                     <input 

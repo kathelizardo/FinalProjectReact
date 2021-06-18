@@ -41,6 +41,7 @@ const SearchBar = () => {
 
   return ( 
       <>  
+      <div className="ui center aligned container">
           <div  class="ui input focus">
             <input 
             type="text" 
@@ -57,7 +58,7 @@ const SearchBar = () => {
           <i className="search icon"></i>
           Search
           </button>
-
+      </div>
           {/* CARD DE RESULTADOS */}
           <div className="ui center aligned container">
             {data.map(repo => (     
