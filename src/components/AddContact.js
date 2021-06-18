@@ -60,6 +60,7 @@ function AddContact() {
                         value={email} 
                         onChange={(event) => setEmail(event.target.value)}/>
                 </div>
+                
             <button class="ui button" type="submit">Submit</button>
 
         </form>

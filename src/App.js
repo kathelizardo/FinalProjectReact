@@ -70,6 +70,7 @@ export default function App() {
           <Route exact path="/">
             <Home />
           </Route>
+
           <Route path="/addcontact">
             <div className="ui container segment" style={{backgroundColor: "teal", padding:"20px"}} > 
             <AddContact/>
@@ -79,6 +80,7 @@ export default function App() {
           <Route path="/findcontact">
            <SearchBar/>
           </Route>
+          
           <Route path="/contact" className="ui center aligned container segment">
             <Contacts/>
           </Route>

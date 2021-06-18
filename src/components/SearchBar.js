@@ -1,5 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import axios from "axios";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 const SearchBar = () => {
@@ -38,7 +44,67 @@ const SearchBar = () => {
   }
 
 
+  const EditContact = (event) => {
+    event.preventDefault()
+    if (!name && !lastname) return console.error('Campos obrigatórios!')
 
+    axios.put(`http://localhost:3000/contatos/${id}`, {
+      name: name,
+      lastname: lastname,
+      phone: phone,
+      email: email
+    })
+    .then(function (response) {
+      alert(JSON.stringify(response))
+      console.log('Usuário modificado com sucesso!')
+    })
+    .catch(function (error) {
+      console.log(error)
+    })
+
+return(
+    <>
+    <div style={{padding:"20px"}}>
+     <label style={{color:"whitesmoke", fontSize:"16px"}}> <i class="user plus icon"></i> Add Contact</label>
+    <form className="ui form segment" onSubmit={() => EditContact()}>
+            <div class="field">
+                <label>Name</label>
+                <input 
+                type="text" 
+                value={name} 
+                onChange={(event) => setName(event.target.value)}/>
+            </div>
+            <div class="field">
+                <label>Last Name</label>
+                <input 
+                type="text" 
+                value={lastname} 
+                onChange={(event) => setLastName(event.target.value)}/>
+            </div>
+            <div class="field">
+                <label>Phone</label>
+                <input 
+                    type="text" 
+                    value={phone} 
+                    onChange={(event) => setPhone(event.target.value)}/>
+            </div>
+            <div class="field">
+                <label>Email</label>
+                <input 
+                    type="text" 
+                    value={email} 
+                    onChange={(event) => setEmail(event.target.value)}/>
+            </div>
+            
+        <button class="ui button" type="submit">Submit</button>
+
+    </form>
+    </div>
+    </>
+    
+)
+}
+ 
   return ( 
       <>  
       <div className="ui center aligned container">
@@ -61,6 +127,7 @@ const SearchBar = () => {
       </div>
           {/* CARD DE RESULTADOS */}
           <div className="ui center aligned container">
+            <Router>
             {data.map(repo => (     
 
                 <div class="ui cards" style={{justifyContent:"center", paddingTop:"30px"}} key={repo.name}>
@@ -76,22 +143,35 @@ const SearchBar = () => {
                       Phone: {repo.phone}
                       </div>
                     </div>
-                    <div class="extra content">
-                      <div class="ui two buttons">
-                        <div class="ui basic teal button">Edit</div>
-                        <button type="submit" onClick={() => deleteContact(repo.id)} class="ui red icon button"><i class="trash alternate outline icon"></i></button>
+                   
+                      <div class="extra content">
+                        <div class="ui two buttons">
+                            <Link className="ui basic teal button"
+                                  role="button"
+                                  to="/editcontact">Edit
+                            </Link>
+                          <button type="submit" onClick={() => deleteContact(repo.id)} class="ui red icon button"><i class="trash alternate outline icon"></i></button>
+                        </div>
                       </div>
-                    </div>
                   </div>
                 </div>
-
-
             ))}
+            
+              <Switch>
+                <Route path="/editcontact">
+                  <EditContact/>
+                </Route>
+              </Switch>
+         
+            </Router>
             </div>
 
       </>
   );
 };
+
+
+  
 
 export default SearchBar;
 
