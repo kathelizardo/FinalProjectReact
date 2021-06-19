@@ -44,14 +44,12 @@ function EditContact (props) {
     return (
         <>
         <div className="ui center aligned container">
-        <i className="angle double down icon" style={{color:"turquoise",paddingTop:"10px"}}></i>
-        <i className="angle double down icon" style={{color:"teal"}}></i>
-        <i className="angle double down icon" style={{color:"turquoise"}}></i>
+        <i className="angle double down icon" style={{color:"turquoise", paddingTop:"10px"}}></i>
         </div>
 
         <div style={{paddingTop:"20px"}}>
         <div clasName="ui compact segment" style={{padding:"20px", backgroundColor:"teal"}}>
-         <label style={{color:"whitesmoke", fontSize:"16px"}}> <i className="user plus icon"></i> Edit Contact</label>
+         <label style={{color:"whitesmoke", fontSize:"16px"}}> <i className="edit icon"></i> Edit Contact</label>
         <form className="ui form segment" onSubmit={() => update()}>
                 <div className="field">
                     <label>Name</label>
@@ -82,7 +80,7 @@ function EditContact (props) {
                         onChange={(event) => setEmail(event.target.value)}/>
                 </div>
                 
-            <button className="ui button" type="submit">Submit</button>
+            <button type="submit" className="ui teal button" >Submit</button>
 
         </form>
         </div>
