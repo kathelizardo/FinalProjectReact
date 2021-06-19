@@ -28,7 +28,7 @@ function Contacts() {
         console.log(error);
       });
   }
-
+ 
   return (
       <>
       <div className="ui container segment" style={{backgroundColor: "teal", padding:"20px"}}>
