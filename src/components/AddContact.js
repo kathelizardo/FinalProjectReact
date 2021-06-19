@@ -29,31 +29,31 @@ function AddContact() {
 }
     return(
         <>
-        <div style={{padding:"20px"}}>
-         <label style={{color:"whitesmoke", fontSize:"16px"}}> <i class="user plus icon"></i> Add Contact</label>
+        <div style={{padding:"15px"}}>
+         <label style={{color:"whitesmoke", fontSize:"16px"}}> <i className="user plus icon"></i> Add Contact</label>
         <form className="ui form segment" onSubmit={() => create()}>
-                <div class="field">
+                <div className="field">
                     <label>Name</label>
                     <input 
                     type="text" 
                     value={name} 
                     onChange={(event) => setName(event.target.value)}/>
                 </div>
-                <div class="field">
+                <div className="field">
                     <label>Last Name</label>
                     <input 
                     type="text" 
                     value={lastname} 
                     onChange={(event) => setLastName(event.target.value)}/>
                 </div>
-                <div class="field">
+                <div className="field">
                     <label>Phone</label>
                     <input 
                         type="text" 
                         value={phone} 
                         onChange={(event) => setPhone(event.target.value)}/>
                 </div>
-                <div class="field">
+                <div className="field">
                     <label>Email</label>
                     <input 
                         type="text" 
@@ -61,7 +61,7 @@ function AddContact() {
                         onChange={(event) => setEmail(event.target.value)}/>
                 </div>
                 
-            <button class="ui button" type="submit">Submit</button>
+            <button className="ui button" type="submit">Submit</button>
 
         </form>
         </div>

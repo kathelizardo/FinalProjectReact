@@ -37,11 +37,11 @@ export default function App() {
                       </div>
 
                       <div className="column">
-                          <div class="ui icon header">
+                          <div className="ui icon header">
                           <i className="user plus icon"></i>      
                           </div>
                           <div >
-                          <Link class="ui teal button"
+                          <Link className="ui teal button"
                                 role="button"
                                 to="/addcontact">Add New Contact
                           </Link>
@@ -49,13 +49,19 @@ export default function App() {
                       </div>
 
                       <div className="column"  style={{paddingTop: "20px"}}>
-                          <div class="ui icon header">
+                          <div className="ui icon header">
                           <i className="users icon"></i>      
                           </div>
                           <div >
-                          <Link class="ui teal button"
+                          <Link className="ui teal button"
                                 role="button"
                                 to="/contact">Complete Contact List
+                          </Link>
+                          </div>
+                          <div style={{paddingTop:"20px"}}>
+                          <Link className="ui icon button"
+                                role="button"
+                                to="/"><i className="home icon"></i>
                           </Link>
                           </div>
                       </div>
@@ -80,7 +86,7 @@ export default function App() {
           <Route path="/findcontact">
            <SearchBar/>
           </Route>
-          
+
           <Route path="/contact" className="ui center aligned container segment">
             <Contacts/>
           </Route>

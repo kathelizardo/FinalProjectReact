@@ -19,10 +19,6 @@ function Contacts() {
       })
   }
 
-//   const alertDelete = (event) => {
-
-//   }
-
   const deleteContact = (id) => {
     axios.delete(`http://localhost:3000/contatos/${id}`)
       .then(function () {
@@ -57,8 +53,8 @@ function Contacts() {
                         <td>{item.phone}</td>
                         <td>{item.email}</td>
                         <td>
-                          <button type="submit" class="ui icon button"> <i class="edit icon"></i></button>
-                          <button type="submit" onClick={() => deleteContact(item.id)} class="ui icon button"><i class="trash alternate outline icon"></i></button>
+                          {/* <button type="submit" className="ui icon button"> <i className="edit icon"></i></button> */}
+                          <button type="submit" onClick={() => deleteContact(item.id)} className="ui icon button"><i className="trash alternate outline icon"></i></button>
                         </td>
                       </tr>)})}  
             </tbody>
